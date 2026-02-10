@@ -1,0 +1,229 @@
+# QUICK SETUP GUIDE - Amin Infotech Coming Soon Page
+
+## 🎯 5-Minute Setup
+
+### Prerequisites
+✅ Hosting with Apache (most shared hosting includes this)
+✅ FTP/cPanel access
+✅ Your company logo (amin_logo.png)
+
+### Step-by-Step
+
+#### 1. **Prepare Your Files** (2 minutes)
+```
+Your Package Contains:
+├── index.html          ← Main file
+├── .htaccess          ← Redirect configuration
+├── README.md          ← Full documentation
+└── SETUP_GUIDE.txt    ← This file
+```
+
+#### 2. **Create Folder Structure** (1 minute)
+
+Create this structure on your server:
+```
+public_html/ (or www/)
+├── index.html
+├── .htaccess
+└── images/
+    └── amin_logo.png
+```
+
+#### 3. **Upload Files** (2 minutes)
+
+**Using cPanel:**
+1. Login to cPanel
+2. Open "File Manager"
+3. Navigate to `public_html` or root directory
+4. Enable "Show Hidden Files" (Settings menu)
+5. Upload `index.html` and `.htaccess`
+6. Create `images` folder
+7. Upload `amin_logo.png` inside `images` folder
+
+**Using FTP:**
+1. Connect via FTP client
+2. Navigate to root directory
+3. Upload `index.html`
+4. Upload `.htaccess` (enable showing hidden files)
+5. Create `images` folder
+6. Upload `amin_logo.png` there
+
+#### 4. **Test** (Final steps)
+- Visit your domain in browser
+- Should see "Coming Soon" page
+- Logo should display
+- Try visiting: `yourdomain.com/about` or any other URL → should show coming soon page
+- Click "Get in Touch" button → should scroll down
+
+### ✅ Done!
+
+Your coming soon page is live!
+
+---
+
+## 🔧 Common Issues & Quick Fixes
+
+### Issue: Page shows "404 Not Found"
+**Solution:**
+1. Verify `index.html` is in root directory
+2. Check if `.htaccess` is uploaded (may be hidden)
+3. Enable "Show Hidden Files" in file manager
+
+### Issue: Logo doesn't appear
+**Solution:**
+1. Create `images` folder in root
+2. Ensure `amin_logo.png` is inside it
+3. Clear browser cache (Ctrl+Shift+Delete)
+4. Check browser console for errors (F12)
+
+### Issue: URLs not redirecting
+**Solution:**
+1. Contact hosting provider - confirm mod_rewrite is enabled
+2. Check `.htaccess` file permissions (should be 644 or 755)
+3. Move `.htaccess` to ensure it's in root directory
+
+### Issue: Styles look broken
+**Solution:**
+1. Hard refresh page (Ctrl+F5 or Cmd+Shift+R)
+2. Clear browser cache
+3. Try different browser to test
+
+---
+
+## 📝 Customization (Optional)
+
+Edit `index.html` in a text editor:
+
+**Change company name:**
+- Find: `Amin Infotech`
+- Replace with: Your company name
+
+**Change phone numbers:**
+- Find: `+91 9924700015`
+- Replace with: Your numbers
+
+**Change email:**
+- Find: `amininfotech@gmail.com`
+- Replace with: Your email
+
+**Change office address:**
+- Find: `4th Floor Signature Building...`
+- Replace with: Your address
+
+**Change social links:**
+- Find: `facebook.com/amininfotech`
+- Replace with: Your Facebook page URL
+
+---
+
+## 📱 Testing on Mobile
+
+1. Visit your domain on smartphone
+2. Check if page displays correctly
+3. Test "Get in Touch" button
+4. Verify phone numbers are clickable
+5. Check if logo displays
+
+Or use:
+- Chrome DevTools: Press F12 → Click Device Toggle (mobile icon)
+- Firefox Developer Tools: Press F12 → Responsive Design Mode
+
+---
+
+## 🚀 What Happens When Accessed?
+
+| What you do | What happens |
+|------------|--------------|
+| Visit domain.com | Shows Coming Soon page |
+| Visit domain.com/about | Redirects to index.html (shows Coming Soon) |
+| Visit domain.com/products | Redirects to index.html (shows Coming Soon) |
+| Visit any wrong URL | Redirects to index.html (no 404 error) |
+| Click phone numbers | Opens phone dialer on mobile |
+| Click email | Opens default email client |
+| Click social icons | Opens Facebook/LinkedIn |
+
+---
+
+## 🔒 Security Features Included
+
+✅ GZIP Compression (faster loading)
+✅ Browser caching (faster repeat visits)
+✅ Security headers (protects against attacks)
+✅ XSS protection enabled
+✅ Frame hijacking prevention
+
+---
+
+## 📊 SEO Features Included
+
+✅ Meta descriptions for search engines
+✅ Open Graph tags (Facebook sharing preview)
+✅ Twitter Card tags (Twitter sharing preview)
+✅ Structured data (Google rich snippets)
+✅ Mobile-friendly responsive design
+✅ Fast loading with compression
+
+---
+
+## 🎨 What Visitors See
+
+1. **Top Section:**
+   - Logo (your company logo)
+   - "Coming Soon" heading
+   - Description text
+   - "Get in Touch" button
+   - Progress bar (85% complete)
+
+2. **Bottom Section (Get in Touch):**
+   - Office location with address
+   - Support phone numbers
+   - Contact number, email, mobile
+   - Social media icons (Facebook, LinkedIn)
+
+---
+
+## 💡 Pro Tips
+
+1. **Update regularly:** Let people know progress (update progress bar)
+2. **Monitor traffic:** Add Google Analytics to track visitors
+3. **Collect emails:** You can modify the form to collect emails
+4. **Keep logo updated:** If branding changes, update amin_logo.png
+5. **Test on real devices:** Test on iPhone, Android, tablets
+
+---
+
+## 📞 Need Help?
+
+**For hosting issues:**
+- Contact your hosting provider's support
+- Ask them to enable `mod_rewrite`
+
+**For customization:**
+- Edit the HTML file in any text editor
+- Most changes are simple find-and-replace
+
+**For design changes:**
+- All CSS is in the `<style>` section
+- Colors: `#be123c` (red), `#0f172a` (dark blue)
+
+---
+
+## ✨ Features Summary
+
+🎨 Modern, professional design
+📱 Fully responsive (mobile, tablet, desktop)
+⚡ Fast loading (all-in-one HTML file)
+🔍 SEO optimized for search engines
+🔗 Automatic URL redirection
+📧 Contact information display
+💬 Social media integration
+🎯 Call-to-action button
+📊 Progress indicator
+🔐 Security features included
+♿ Accessible to all users
+
+---
+
+**Your coming soon page is production-ready!**
+
+Enjoy! 🎉

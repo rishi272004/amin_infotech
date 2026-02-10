@@ -1,0 +1,360 @@
+# File Structure Reference
+
+## Your Complete Package Contents
+
+```
+coming-soon-package/
+│
+├── 📄 index.html                    ← MAIN FILE (Upload to server root)
+├── 📄 .htaccess                     ← CONFIG FILE (Upload to server root)
+├── 📚 README.md                     ← Full documentation
+├── 📋 SETUP_GUIDE.txt              ← Quick setup instructions  
+├── ✅ DEPLOYMENT_CHECKLIST.md      ← Deployment progress tracker
+└── 📁 FILE_STRUCTURE.txt           ← This file (reference guide)
+
+```
+
+---
+
+## Where Files Go on Your Server
+
+### ✅ Correct Structure
+
+```
+Web Server Root Directory (public_html or www/)
+│
+├── index.html                      ← Coming soon page HTML file
+├── .htaccess                       ← Apache rewrite configuration
+│
+└── 📁 images/                      ← Images folder
+    └── amin_logo.png              ← Your company logo
+```
+
+### ❌ Incorrect Structures (Don't Do This!)
+
+```
+❌ WRONG: Files in subfolders
+public_html/
+├── coming-soon-package/
+│   └── index.html          (Wrong location!)
+
+❌ WRONG: Logo in wrong location  
+public_html/
+├── index.html
+├── .htaccess
+└── amin_logo.png           (Should be in images/)
+
+❌ WRONG: Missing .htaccess
+public_html/
+├── index.html              (Without .htaccess, redirects won't work)
+
+❌ WRONG: .htaccess not hidden
+htaccess.txt               (Must be named .htaccess with dot)
+```
+
+---
+
+## Understanding Each File
+
+### 1. **index.html** (755 lines)
+**What it is:** Your complete coming soon webpage
+
+**Contains:**
+- HTML structure
+- Inline CSS styling
+- JavaScript for interactions
+- All meta tags (SEO)
+- Contact section
+- Social media links
+- Responsive design
+
+**Where it goes:** Root directory (public_html/)
+**Upload as:** `index.html`
+**File size:** ~30KB
+**Editable?** Yes, with text editor
+
+### 2. **.htaccess** (27 lines)
+**What it is:** Apache server configuration file
+
+**Does:**
+- Redirects all URLs to index.html
+- Enables GZIP compression
+- Sets up caching (30 days for images, 1 hour for HTML)
+- Adds security headers
+- Hides file extensions
+
+**Where it goes:** Root directory (public_html/)
+**Upload as:** `.htaccess` (with the dot)
+**File size:** ~1KB
+**Editable?** Only if you know Apache config
+**Important:** Enable "Show Hidden Files" to see/upload it
+
+### 3. **README.md** (300+ lines)
+**What it is:** Complete reference documentation
+
+**Contains:**
+- Feature list
+- Technical details
+- Customization instructions
+- Troubleshooting guide
+- Verification checklist
+- Browser compatibility
+- SEO details
+
+**Where it goes:** Keep locally (not on server)
+**Purpose:** Reference guide for setup and customization
+**Editable?** Yes, for personal notes
+
+### 4. **SETUP_GUIDE.txt** (200+ lines)
+**What it is:** Quick start instructions
+
+**Contains:**
+- 5-minute setup steps
+- Common issues & fixes
+- Customization instructions
+- Testing checklist
+- Folder structure diagram
+
+**Where it goes:** Keep locally (not on server)
+**Purpose:** Fast reference for deployment
+**Editable?** Yes, for personal notes
+
+### 5. **DEPLOYMENT_CHECKLIST.md** (250+ lines)
+**What it is:** Interactive checklist for tracking progress
+
+**Contains:**
+- Pre-deployment checks
+- Upload step checklist
+- Verification tests
+- Browser compatibility tests
+- Security checks
+- Troubleshooting checklists
+
+**Where it goes:** Keep locally (not on server)
+**Purpose:** Track your deployment progress
+**How to use:** Check off boxes as you complete each step
+
+---
+
+## Images Folder Setup
+
+### Creating the Images Folder
+
+**Via cPanel File Manager:**
+1. Navigate to public_html
+2. Right-click → Create New → Folder
+3. Name it: `images`
+4. Open images folder
+5. Upload `amin_logo.png`
+
+**Via FTP:**
+1. Right-click in root directory
+2. Create folder → name it `images`
+3. Open images folder
+4. Drag & drop `amin_logo.png`
+
+### Final Structure
+```
+public_html/
+├── index.html
+├── .htaccess
+└── images/
+    └── amin_logo.png
+```
+
+---
+
+## Server Upload Destinations
+
+### Using cPanel (Recommended)
+- **Root Directory:** `public_html/`
+- **Upload index.html to:** `public_html/index.html`
+- **Upload .htaccess to:** `public_html/.htaccess`
+- **Upload logo to:** `public_html/images/amin_logo.png`
+
+### Using FTP/SFTP
+- **Root Directory:** Varies (usually `/public_html/` or `/htdocs/`)
+- **Upload index.html to:** `./index.html`
+- **Upload .htaccess to:** `./.htaccess`
+- **Upload logo to:** `./images/amin_logo.png`
+
+### Using File Manager (Web Hosting Control Panel)
+- **Root Directory:** `public_html/` or `Domain Root`
+- **Upload index.html to:** Root
+- **Upload .htaccess to:** Root (enable hidden files view)
+- **Upload logo to:** Create `images/` folder in root
+
+---
+
+## File Naming - Important!
+
+⚠️ **Case Sensitive on Most Servers:** Linux/Apache servers are case-sensitive!
+
+### Correct Naming
+- ✅ `index.html` (lowercase)
+- ✅ `.htaccess` (lowercase, with dot prefix)
+- ✅ `images` (lowercase folder name)
+- ✅ `amin_logo.png` (exact spelling and case)
+
+### Incorrect Naming
+- ❌ `Index.html` (uppercase I - won't work!)
+- ❌ `INDEX.HTML` (will not be found)
+- ❌ `htaccess.txt` (missing dot, wrong extension)
+- ❌ `IMAGES` (uppercase - image path won't match)
+- ❌ `Amin_Logo.png` (doesn't match src= in HTML)
+
+---
+
+## What Gets Uploaded vs. What Stays Local
+
+### 📤 Upload to Server (Required for live page)
+- ✅ `index.html`
+- ✅ `.htaccess`
+- ✅ `images/amin_logo.png`
+
+### 📥 Keep Locally (Reference/Documentation)
+- 📖 `README.md`
+- 📖 `SETUP_GUIDE.txt`
+- ✅ `DEPLOYMENT_CHECKLIST.md` (use to track progress)
+- 📖 `FILE_STRUCTURE.txt` (this file)
+
+---
+
+## File Permissions (If Using FTP/SSH)
+
+### Recommended Permissions
+
+| File | Permission | Meaning |
+|------|-----------|---------|
+| `index.html` | 644 | Readable by all, writable by owner |
+| `.htaccess` | 644 | Readable by all, writable by owner |
+| `images/` (folder) | 755 | Executable (allows browsing), readable |
+| `amin_logo.png` | 644 | Readable by all, writable by owner |
+
+**Note:** Most hosting auto-sets permissions. You only need to worry if you get "Permission Denied" errors.
+
+---
+
+## Accessing Your Files Locally
+
+### On Windows
+```
+C:\Users\YourName\Desktop\Digi_Projects\amin-infotech\public\coming-soon-package\
+├── index.html
+├── .htaccess
+├── README.md
+├── SETUP_GUIDE.txt
+├── DEPLOYMENT_CHECKLIST.md
+└── FILE_STRUCTURE.txt
+```
+
+### On Mac/Linux
+```
+/Users/YourName/Desktop/Digi_Projects/amin-infotech/public/coming-soon-package/
+├── index.html
+├── .htaccess
+├── README.md
+├── SETUP_GUIDE.txt
+├── DEPLOYMENT_CHECKLIST.md
+└── FILE_STRUCTURE.txt
+```
+
+---
+
+## Quick Reference Checklist
+
+### Before First Upload
+- [ ] All files are in coming-soon-package folder
+- [ ] index.html present
+- [ ] .htaccess present  
+- [ ] amin_logo.png prepared (160px or larger)
+- [ ] Have FTP/cPanel login info
+
+### During Upload
+- [ ] Create images folder on server
+- [ ] Upload index.html to root
+- [ ] Upload .htaccess to root (show hidden files!)
+- [ ] Upload amin_logo.png to images folder
+
+### After Upload
+- [ ] Visit domain - should see coming soon page
+- [ ] Check logo displays
+- [ ] Test redirect: visit /about → should show coming soon
+- [ ] Test mobile responsiveness
+- [ ] Test contact interactions
+
+---
+
+## File Download & Backup
+
+### How to Download from Server (for backup)
+1. Open FTP client or cPanel
+2. Navigate to public_html
+3. Enable "Show Hidden Files"
+4. Download:
+   - `index.html`
+   - `.htaccess`
+   - `images/amin_logo.png`
+5. Save locally with date: `coming-soon-2024-01-15`
+
+### How to Create Backup Before Uploading
+1. If existing content on domain
+2. Download all files to local folder
+3. Name folder: `backup-original-2024-01-15`
+4. Keep for 30+ days before deleting
+
+---
+
+## Troubleshooting File Issues
+
+### Can't See .htaccess
+- **Problem:** .htaccess is hidden file
+- **Solution:** Enable "Show Hidden Files" in cPanel/FTP settings
+- In Windows: `View` → `Show hidden files`
+- In cPanel: Click `Settings` → Check "Show Hidden Files"
+
+### Logo Doesn't Display
+- **Problem:** Wrong file location
+- **Solution:** Ensure images folder exists AND logo is inside it
+- **Not this:** `public_html/amin_logo.png` ❌
+- **This:** `public_html/images/amin_logo.png` ✅
+
+### Wrong File Format
+- **Problem:** Uploaded as wrong type
+- **Solution:** Check file extensions
+- `.htaccess` NOT `htaccess.txt`
+- `index.html` NOT `index.php` or `index.htm`
+
+### File Seems Corrupted
+- **Problem:** Transferred in wrong mode (ASCII vs Binary)
+- **Solution:** Use Binary mode for all files in FTP
+- **Or:** Re-upload the file
+
+---
+
+## File Sizes (for reference)
+
+| File | Size | Notes |
+|------|------|-------|
+| index.html | ~30KB | Includes all CSS & JS |
+| .htaccess | ~1KB | Very small |
+| amin_logo.png | 10-500KB | Depends on image quality |
+| **Total** | **~40-530KB** | All files combined |
+
+---
+
+## Success Criteria
+
+You'll know it's working when:
+
+✅ Main domain shows coming soon page
+✅ Logo displays correctly  
+✅ /about, /products, /services all show coming soon
+✅ Works on phone and desktop
+✅ Get in Touch button scrolls down
+✅ Contact info displays
+✅ No broken links or missing images
+
+---
+
+**Need more help?** Refer to README.md for detailed documentation.
