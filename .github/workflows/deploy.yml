@@ -1,0 +1,34 @@
+name: Deploy Static Site
+
+on:
+  push:
+    branches:
+      - main # Or whichever branch you use for source code
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Distribution Repo
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out # The folder the action should deploy.
+          repository-name: rishi272004/AminInfotechwebsite
+          branch: main # The branch in the distribution repo
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          clean: true # Remove old files from the distribution repo
