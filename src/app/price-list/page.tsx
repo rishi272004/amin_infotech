@@ -46,17 +46,19 @@ export default function PriceListPage() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: (idx % 3) * 0.1 }}
-      className="p-6 rounded-[2rem] bg-white border border-slate-200 hover:shadow-xl hover:border-rose-300 transition-all group"
+      className="p-8 rounded-[2.5rem] bg-white border border-slate-200 hover:shadow-2xl hover:shadow-slate-200/50 hover:border-rose-300 transition-all group"
     >
-      <div className="flex items-start justify-between mb-4">
-        <h3 className="text-lg font-black text-slate-950 leading-snug flex-1 group-hover:text-rose-600 transition-colors">
+      <div className="flex items-start justify-between mb-6">
+        <h3 className="text-xl font-heading font-bold text-slate-950 leading-tight flex-1 group-hover:text-rose-600 transition-colors">
           {item.name}
         </h3>
-        <CheckCircle2 size={20} className="text-rose-600 flex-shrink-0 ml-2" />
+        <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-600 flex-shrink-0 ml-4">
+           <CheckCircle2 size={18} />
+        </div>
       </div>
-      <div className="flex items-baseline gap-1 mb-2">
-        <span className="text-2xl font-black text-rose-600">{item.currency || '₹'}{item.price}</span>
-        {item.gst && <span className="text-xs text-slate-500 font-medium">+ GST</span>}
+      <div className="flex items-baseline gap-1">
+        <span className="text-3xl font-heading font-bold text-rose-600">{item.currency || '₹'}{item.price}</span>
+        {item.gst && <span className="text-xs text-slate-500 font-bold uppercase tracking-wider ml-2"> + GST</span>}
       </div>
     </motion.div>
   );
@@ -67,18 +69,22 @@ export default function PriceListPage() {
 
       <main className="page-header-offset">
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+        <section className="py-32 bg-slate-50 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-rose-600/5 -skew-x-12 transform origin-top translate-x-20" />
+          <div className="absolute top-[-10%] left-[-5%] text-[40vw] font-black text-rose-50/40 select-none pointer-events-none tracking-tighter leading-none">
+            AI
+          </div>
+          
           <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-3xl mx-auto text-center"
+              className="max-w-4xl mx-auto text-center"
             >
-              <div className="inline-block bg-rose-100 text-rose-700 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              <div className="inline-block bg-white border border-rose-100 text-rose-600 text-[12px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full mb-8 shadow-sm">
                 Transparent Pricing
               </div>
-              <h1 className="text-[50px] md:text-[80px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-[50px] md:text-[80px] font-heading font-black text-slate-950 tracking-tighter leading-[0.9] mb-10">
                 Our <span className="text-rose-600">Price</span> List
               </h1>
               <p className="text-xl text-slate-600 font-medium leading-relaxed">
@@ -89,7 +95,7 @@ export default function PriceListPage() {
         </section>
 
         {/* Price Offers on Tally Products */}
-        <section className="py-24 border-b border-slate-100">
+        <section className="py-24 bg-white relative">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -97,16 +103,18 @@ export default function PriceListPage() {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <Package size={32} className="text-rose-600" />
+              <div className="flex items-center gap-6 mb-4">
+                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600">
+                   <Package size={32} />
+                </div>
                 <div>
-                  <h2 className="text-[40px] font-black text-slate-950 tracking-tight">Price Offers on Tally Products</h2>
-                  <p className="text-slate-500 font-medium mt-2">Choose the perfect solution for your business requirements</p>
+                  <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight">Price Offers on Tally Products</h2>
+                  <p className="text-slate-500 font-medium text-lg mt-2">Choose the perfect solution for your business requirements</p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {tallyProducts.map((item, idx) => (
                 <PricingCard key={idx} item={item} idx={idx} />
               ))}
@@ -115,24 +123,27 @@ export default function PriceListPage() {
         </section>
 
         {/* Price Offers on Products Upgrades */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
+        <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -ml-32 -mt-32" />
+          <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-16"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <TrendingUp size={32} className="text-rose-600" />
+              <div className="flex items-center gap-6 mb-4">
+                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600">
+                  <TrendingUp size={32} />
+                </div>
                 <div>
-                  <h2 className="text-[40px] font-black text-slate-950 tracking-tight">Price Offers on Products Upgrades</h2>
-                  <p className="text-slate-500 font-medium mt-2">Affordable upgrade paths for existing Tally users</p>
+                  <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight">Price Offers on Products Upgrades</h2>
+                  <p className="text-slate-500 font-medium text-lg mt-2">Affordable upgrade paths for existing Tally users</p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {upgradeOptions.map((item, idx) => (
                 <PricingCard key={idx} item={item} idx={idx} />
               ))}
@@ -141,7 +152,7 @@ export default function PriceListPage() {
         </section>
 
         {/* Tally Software Services Subscriptions */}
-        <section className="py-24 border-b border-slate-100">
+        <section className="py-24 bg-white border-b border-slate-100">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -149,16 +160,18 @@ export default function PriceListPage() {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <Zap size={32} className="text-rose-600" />
+              <div className="flex items-center gap-6 mb-4">
+                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600">
+                  <Zap size={32} />
+                </div>
                 <div>
-                  <h2 className="text-[40px] font-black text-slate-950 tracking-tight">Tally Software Services Subscriptions</h2>
-                  <p className="text-slate-500 font-medium mt-2">Keep your system updated with regular subscriptions</p>
+                  <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight">Tally Software Services Subscriptions</h2>
+                  <p className="text-slate-500 font-medium text-lg mt-2">Keep your system updated with regular subscriptions</p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {subscriptions.map((item, idx) => (
                 <PricingCard key={idx} item={item} idx={idx} />
               ))}
@@ -167,24 +180,27 @@ export default function PriceListPage() {
         </section>
 
         {/* International Charges */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
+        <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+          <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="mb-16"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <Globe size={32} className="text-rose-600" />
+              <div className="flex items-center gap-6 mb-4">
+                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600">
+                   <Globe size={32} />
+                </div>
                 <div>
-                  <h2 className="text-[40px] font-black text-slate-950 tracking-tight">International Charges</h2>
-                  <p className="text-slate-500 font-medium mt-2">Global pricing for our worldwide customers</p>
+                  <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight">International Charges</h2>
+                  <p className="text-slate-500 font-medium text-lg mt-2">Global pricing for our worldwide customers</p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {internationalPricing.map((item, idx) => (
                 <PricingCard key={idx} item={item} idx={idx} />
               ))}
@@ -193,27 +209,27 @@ export default function PriceListPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 bg-slate-950">
+        <section className="py-32 bg-slate-600">
           <div className="container-custom text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">Ready to Get Started?</h2>
-              <p className="text-xl text-slate-300 font-medium mb-12 max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">Ready to Get Started?</h2>
+              <p className="text-xl text-slate-300 font-normal mb-12 max-w-2xl mx-auto">
                 Contact our sales team for custom quotes, bulk discounts, or special pricing arrangements tailored to your organization's needs.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="bg-rose-600 text-white font-black py-5 px-14 rounded-2xl hover:bg-rose-700 hover:shadow-2xl hover:shadow-rose-600/40 transition-all hover:-translate-y-1"
+                  className="bg-rose-600 text-white font-bold py-5 px-14 rounded-2xl hover:bg-rose-700 hover:shadow-2xl hover:shadow-rose-600/40 transition-all hover:-translate-y-1"
                 >
                   Get Custom Quote
                 </Link>
                 <Link
                   href="/products"
-                  className="bg-white/10 text-white border border-white/30 font-black py-5 px-14 rounded-2xl hover:bg-white/20 transition-all"
+                  className="bg-white/10 text-white border border-white/30 font-bold py-5 px-14 rounded-2xl hover:bg-white/20 transition-all"
                 >
                   Explore Products
                 </Link>

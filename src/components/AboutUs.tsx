@@ -47,17 +47,16 @@ const AboutUs = () => {
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-6 block"
+              className="text-[18px] font-bold uppercase tracking-[0.1em] text-rose-600 mb-6 block"
             >
               Our Company
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-[50px] md:text-[64px] font-black text-slate-950 tracking-tighter leading-[0.95] mb-10"
+              className="text-[50px] md:text-[50px] font-black text-slate-950 tracking-tighter leading-[0.95] mb-10"
             >
               Amin Infotech <br />
-              <span className="text-rose-600">Pvt. Ltd.</span>
             </motion.h2>
 
             <motion.div 
@@ -65,15 +64,15 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="space-y-8 mb-12"
             >
-              <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              <p className="text-base text-slate-700 font-medium leading-relaxed">
                 Authorized Dealer of Tally
               </p>
               
-              <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              <p className="text-base text-slate-700 font-medium leading-relaxed">
                 AMIN INFOTECH is an Authorized Certified Partner solution provider of Tally Solutions Pvt. Ltd. for its various products & services Located at Vadodara, India, the company has been providing scalable, reliable and highly efficient solutions to clientele across the World. We are an authorized Tally Partner (TP), Tally Integrator (TI) & Tally Extender (TE).
               </p>
               
-              <p className="text-lg text-slate-600 font-medium leading-relaxed">
+              <p className="text-base text-slate-700 font-medium leading-relaxed">
                 We offer Ready to use standard softwares from house of Tally like. Software for Financial Accounting (TallyPrime), Software for ERP, Software for Payroll Management (Tally Payroll), Audit Tool for Tax Professionals, Software for Retail Outlets (Tally Shopper). We also undertake Tally customization, Data Synchronization & implementation of any tally products.
               </p>
               

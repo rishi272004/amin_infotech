@@ -236,8 +236,10 @@ export default function TallySoftwareServicesPage() {
       
       <main className="page-header-offset">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-slate-50 to-white py-24 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+        <section className="bg-slate-50 py-24 relative overflow-hidden">
+          <div className="absolute top-[-10%] left-[-5%] text-[40vw] font-black text-rose-50/40 select-none pointer-events-none tracking-tighter leading-none">
+            AI
+          </div>
           
           <div className="container-custom relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -246,11 +248,11 @@ export default function TallySoftwareServicesPage() {
                 animate={{ opacity: 1, x: 0 }}
                 className="max-w-2xl"
               >
-                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-6 block">Connectivity Suite</span>
-                <h1 className="text-[50px] md:text-[65px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-10">
+                <span className="text-[18px] font-bold uppercase tracking-[0.3em] text-rose-600 mb-6 block">Connectivity Suite</span>
+                <h1 className="text-[50px] md:text-[65px] font-heading font-bold text-slate-950 tracking-tighter leading-[0.9] mb-10">
                   <span className="text-rose-600">Tally.NET</span> <span className="text-slate-950">Services</span>
                 </h1>
-                <p className="text-xl text-slate-600 font-medium leading-relaxed mb-8">
+                <p className="text-xl text-slate-600 font-normal leading-relaxed mb-8">
                   The complete business management solution for modern, connected enterprises. Stay instantly connected with your business, customers, banks, and stakeholders - 24/7 from anywhere.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -310,38 +312,72 @@ export default function TallySoftwareServicesPage() {
           </div>
         </section>
 
-        {/* Overview Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">The Complete Business Management Solution</h2>
-              
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
-                <p>
-                  Modern businesses operate in a connected and informed environment. Better connectivity both internally with employees, branches, warehouses and factory and externally with vendors, customers and banks ensures efficient business operations and hence, faster growth. Not just with stakeholders, but as an entrepreneur, to be in constant touch with your business is essential.
-                </p>
-
-                <p>
-                  During engagements with clients, vendors or simply while travelling for business or leisure, information on your finger-tips helps take timely decisions. TallyPrime provides value added services to deliver such connectivity to modern businesses, via Tally.NET Services. Tally.NET Services help you connect more efficiently with your business, customers, banks and other business stakeholders.
-                </p>
-
-                <p>
-                  With the host of services that Tally.NET powers, you can rest assured that your business will always remain up-to-date with the latest developments in technology and statutory laws. It also assures you that you have complete visibility to your business (along with all branches) even while you are on the move.
-                </p>
+        {/* Why Choose Section - Modern Layout */}
+        <section className="py-32 bg-white relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-0 w-64 h-64 bg-rose-50 rounded-full blur-[100px] -z-0 opacity-50" />
+          </div>
+          
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
+              {/* Left Side: Sticky Header */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32 pb-10">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-rose-600 font-bold tracking-[0.2em] text-sm uppercase mb-6 block">Connected Business</span>
+                  <h2 className="text-[48px] md:text-[56px] font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-8">
+                    Tally.NET <br />
+                    <span className="text-rose-600">Connectivity.</span>
+                  </h2>
+                  <div className="w-20 h-1.5 bg-rose-600 mb-8" />
+                  <p className="text-lg text-slate-500 font-normal leading-relaxed max-w-sm">
+                    Bridging the gaps between your branches, stakeholders, and data—wherever you are.
+                  </p>
+                </motion.div>
               </div>
-            </motion.div>
+
+              {/* Right Side: Paragraph Contents */}
+              <div className="lg:col-span-7 space-y-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="prose prose-slate max-w-none"
+                >
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
+                    <div className="absolute top-0 left-0 w-2 h-full bg-rose-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      Modern businesses operate in a connected and informed environment. Better connectivity—both internally with employees, branches, warehouses, and factories, and externally with vendors, customers, and banks—ensures efficient business operations and, consequently, faster growth. For an entrepreneur, staying in constant touch with your business is no longer just an option; it is essential.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-50/50 border border-slate-100 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      During engagements with clients and vendors, or even while travelling for business or leisure, having information at your fingertips helps you take timely decisions. TallyPrime provides value-added services to deliver such connectivity via Tally.NET Services, helping you connect more efficiently with your business, customers, banks, and other vital stakeholders.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-rose-600 text-white shadow-xl shadow-rose-200 mt-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+                    <p className="text-xl font-normal leading-relaxed m-0">
+                      With the host of services that Tally.NET powers, you can rest assured that your business will always remain up-to-date with the latest developments in technology and statutory laws. It provides complete visibility of your business along with all branches, ensuring you are always informed, even while you are on the move.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Connectivity Framework Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Complete Connectivity Framework</h2>
+        <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+          <div className="container-custom relative z-10">
+            <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight mb-16 text-center">Complete Connectivity Framework</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {connectivity.map((section, i) => (
@@ -351,14 +387,14 @@ export default function TallySoftwareServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:shadow-2xl transition-all"
+                  className="p-10 rounded-[2.5rem] bg-white border border-slate-100 hover:shadow-2xl hover:shadow-slate-200/50 transition-all font-normal"
                 >
-                  <h3 className="text-lg font-black text-rose-600 mb-6 uppercase tracking-tight">{section.title}</h3>
+                  <h3 className="text-xl font-heading font-bold text-rose-600 mb-8 tracking-tight uppercase">{section.title}</h3>
                   <div className="space-y-4">
                     {section.items.map((item, idx) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 size={20} className="text-slate-400 flex-shrink-0 mt-1" />
-                        <p className="text-slate-700 font-medium">{item}</p>
+                        <CheckCircle2 size={20} className="text-rose-600 flex-shrink-0 mt-1" />
+                        <p className="text-slate-700 font-medium leading-relaxed">{item}</p>
                       </div>
                     ))}
                   </div>
@@ -369,9 +405,9 @@ export default function TallySoftwareServicesPage() {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-24 border-b border-slate-100">
+        <section className="py-24 bg-white">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Key Features</h2>
+            <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight mb-16 text-center">Key Features</h2>
             
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -382,12 +418,12 @@ export default function TallySoftwareServicesPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-6 rounded-xl bg-slate-50 border border-slate-100 hover:shadow-lg hover:border-rose-200 transition-all"
+                    className="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg hover:border-rose-200 transition-all"
                   >
                     <div className="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center flex-shrink-0 mt-1">
                       <CheckCircle2 size={16} className="text-white" />
                     </div>
-                    <p className="text-slate-700 font-medium">{feature}</p>
+                    <p className="text-slate-700 font-medium leading-relaxed">{feature}</p>
                   </motion.div>
                 ))}
               </div>
@@ -396,24 +432,29 @@ export default function TallySoftwareServicesPage() {
         </section>
 
         {/* Why Tally.NET Section */}
-        <section className="py-24">
-          <div className="container-custom">
+        <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+           <div className="absolute top-0 left-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -ml-32 -mt-32" />
+          <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
+              className="max-w-4xl mx-auto text-center"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Why Tally.NET Services</h2>
+              <h2 className="text-[32px] font-heading font-black text-slate-950 tracking-tight mb-12">Why Tally.NET Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-10 rounded-[2rem] bg-rose-50 border border-rose-100 hover:shadow-lg transition-all">
-                  <p className="text-lg text-slate-700 font-medium leading-relaxed">
-                    <span className="text-rose-600 font-black">Complete Visibility:</span> Access your complete business data across all branches and warehouse locations in real-time.
+                <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all text-left relative overflow-hidden group">
+                   <div className="absolute top-0 left-0 w-2 h-full bg-rose-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <p className="text-lg text-slate-600 font-medium leading-relaxed m-0">
+                    <span className="text-rose-600 font-bold block mb-2 text-xl">Complete Visibility</span> 
+                    Access your complete business data across all branches and warehouse locations in real-time.
                   </p>
                 </div>
-                <div className="p-10 rounded-[2rem] bg-slate-100 border border-slate-200 hover:shadow-lg transition-all">
-                  <p className="text-lg text-slate-700 font-medium leading-relaxed">
-                    <span className="text-slate-900 font-black">Always Connected:</span> Stay informed and make faster decisions with information on your fingertips from anywhere.
+                <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all text-left relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-slate-950 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <p className="text-lg text-slate-600 font-medium leading-relaxed m-0">
+                    <span className="text-slate-950 font-bold block mb-2 text-xl">Always Connected</span> 
+                    Stay informed and make faster decisions with information on your fingertips from anywhere.
                   </p>
                 </div>
               </div>

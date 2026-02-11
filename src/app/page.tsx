@@ -4,7 +4,6 @@ import ServiceCards from '@/components/ServiceCards';
 import AboutUs from '@/components/AboutUs';
 import ProductsCarousel from '@/components/ProductsCarousel';
 import ServicesSection from '@/components/ServicesSection';
-import FooterPreview from '@/components/FooterPreview';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
         <AboutUs />
         <ProductsCarousel />
         <ServicesSection />
-        <FooterPreview />
       </main>
 
       <Footer />

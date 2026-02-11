@@ -52,11 +52,11 @@ export default function CorporateTrainingPage() {
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-rose-600 font-black tracking-widest text-[11px] uppercase mb-6"
+                className="text-rose-600 font-bold tracking-widest text-[18px] uppercase mb-6"
               >
                 Professional Development
               </motion.div>
-              <h1 className="text-[50px] md:text-[70px] font-black text-slate-950 tracking-tighter leading-[1.1] mb-8">
+              <h1 className="text-[50px] md:text-[60px] font-bold text-slate-950 tracking-tighter leading-[1.1] mb-8">
                 TallyPrime <span className="text-rose-600">Corporate Training</span> Services
               </h1>
               <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
@@ -65,7 +65,7 @@ export default function CorporateTrainingPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="bg-slate-950 text-white font-black py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
+                  className="bg-slate-950 text-white font-bold py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
                 >
                   Schedule Training Program
                 </Link>
@@ -83,9 +83,9 @@ export default function CorporateTrainingPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Elevate Your Team's Tally Expertise</h2>
+              <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-12">Elevate Your Team's Tally Expertise</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   We provide corporate training through our well-experienced and knowledgeable coaching staff. We have successfully completed several corporate training programs for Tally across diverse industries and organizational sizes.
                 </p>
@@ -94,7 +94,7 @@ export default function CorporateTrainingPage() {
                   Corporate Training schedule including amount, time slot, and venue are completely customized to suit your organization's specific needs. Our flexible approach ensures that training doesn't disrupt your business operations while empowering your team with complete Tally proficiency.
                 </p>
 
-                <p className="font-black text-rose-600 italic">
+                <p className="font-bold text-rose-600 italic">
                   From introductory sessions to advanced system administration, our comprehensive curriculum covers every aspect of Tally operation and management.
                 </p>
               </div>
@@ -123,71 +123,6 @@ export default function CorporateTrainingPage() {
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Why Choose Our Training?</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, i) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                    <benefit.icon size={28} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{benefit.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm">{benefit.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Training Highlights Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Training Program Highlights</h2>
-            
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <div className="w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center font-black mb-6">
-                  ✓
-                </div>
-                <h3 className="text-xl font-black text-slate-950 mb-4">Complete Coverage</h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
-                  20 comprehensive modules covering every aspect from system activation to advanced features like Tally Vault and security controls.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <div className="w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center font-black mb-6">
-                  ✓
-                </div>
-                <h3 className="text-xl font-black text-slate-950 mb-4">Flexible Customization</h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
-                  Training duration, time slots, and venue are completely customized to align with your organization's specific schedule and requirements.
-                </p>
-              </motion.div>
             </div>
           </div>
         </section>

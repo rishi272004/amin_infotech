@@ -219,8 +219,10 @@ export default function TallyDeveloper9Page() {
       
       <main className="page-header-offset">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-slate-50 to-white py-24 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+        <section className="bg-slate-50 py-24 relative overflow-hidden">
+          <div className="absolute top-[-10%] left-[-5%] text-[40vw] font-black text-rose-50/40 select-none pointer-events-none tracking-tighter leading-none">
+            AI
+          </div>
           
           <div className="container-custom relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -229,11 +231,11 @@ export default function TallyDeveloper9Page() {
                 animate={{ opacity: 1, x: 0 }}
                 className="max-w-2xl"
               >
-                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-6 block">Development Suite</span>
-                <h1 className="text-[50px] md:text-[65px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-10">
+                <span className="text-[18px] font-bold uppercase tracking-[0.3em] text-rose-600 mb-6 block">Development Suite</span>
+                <h1 className="text-[50px] md:text-[65px] font-heading font-bold text-slate-950 tracking-tighter leading-[0.9] mb-10">
                   <span className="text-rose-600">Tally.Developer</span> <span className="text-slate-950">9</span>
                 </h1>
-                <p className="text-xl text-slate-600 font-medium leading-relaxed mb-8">
+                <p className="text-xl text-slate-600 font-normal leading-relaxed mb-8">
                   The comprehensive development environment designed specifically for TDL (Tally Definition Language). Build, debug, and deploy powerful Tally customizations with professional-grade tools.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -292,42 +294,78 @@ export default function TallyDeveloper9Page() {
           </div>
         </section>
 
-        {/* Overview Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Comprehensive Development Environment</h2>
-              
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
-                <p>
-                  Tally.Developer 9 is a comprehensive development environment designed specifically for the TDL (Tally Definition Language). TDL is the development language of TallyPrime and is used to build additional functionality into the product. TDL enables the programmers to develop and deploy solutions rapidly with ease.
-                </p>
-
-                <p>
-                  Tally.Developer 9 makes programmer's life easier with powerful features like syntax highlighting, column selection and auto completion. Apart from this, the definition browser, schema browser and function browser are also available as a part of the product providing instant reference to the TDL programmer.
-                </p>
-
-                <p>
-                  Tally.Developer 9 is an editor, search engine and a compiler as well. It also provides the tools to decompile a TCP, migrate an encrypted TDL file and Tally Connector to send XML request to Tally and get the response in XML format.
-                </p>
-
-                <p>
-                  The TDL code can be configured to run on one, more or all Tally serial number(s) while creating the TCP (Tally Compliant Product) file and also stamp the TCPs for a specific site. This enables you to control license usage and minimize revenue leakage.
-                </p>
+        {/* Why Choose Section - Modern Layout */}
+        <section className="py-32 bg-white relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-0 w-64 h-64 bg-rose-50 rounded-full blur-[100px] -z-0 opacity-50" />
+          </div>
+          
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
+              {/* Left Side: Sticky Header */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32 pb-10">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-rose-600 font-bold tracking-[0.2em] text-sm uppercase mb-6 block">Development Power</span>
+                  <h2 className="text-[48px] md:text-[56px] font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-8">
+                    TDL Engineering <br />
+                    <span className="text-rose-600">Reimagined.</span>
+                  </h2>
+                  <div className="w-20 h-1.5 bg-rose-600 mb-8" />
+                  <p className="text-lg text-slate-500 font-normal leading-relaxed max-w-sm">
+                    A comprehensive environment built specifically for rapid TDL development and deployment.
+                  </p>
+                </motion.div>
               </div>
-            </motion.div>
+
+              {/* Right Side: Paragraph Contents */}
+              <div className="lg:col-span-7 space-y-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="prose prose-slate max-w-none"
+                >
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
+                    <div className="absolute top-0 left-0 w-2 h-full bg-rose-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      Tally.Developer 9 is a comprehensive development environment designed specifically for the TDL (Tally Definition Language), which is the primary development language of TallyPrime used to build additional functionality into the product. It enables programmers to develop and deploy solutions rapidly with ease, ensuring high output and efficiency.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-50/50 border border-slate-100 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      To make a programmer's life easier, the environment includes powerful features like syntax highlighting, column selection, and auto-completion. Additionally, the definition browser, schema browser, and function browser are available as integrated components of the product, providing instant reference and context for the TDL programmer.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      Tally.Developer 9 functions as a versatile editor, search engine, and compiler. It further provides essential tools to decompile a TCP, migrate an encrypted TDL file, and features the Tally Connector to send XML requests to Tally and receive responses in XML format, streamlining the entire integration workflow.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-rose-600 text-white shadow-xl shadow-rose-200 mt-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+                    <p className="text-xl font-normal leading-relaxed m-0">
+                      The TDL code can be configured to run on one or more Tally serial numbers while creating the TCP (Tally Compliant Product) file, and can even be stamped for a specific site. This empowers you to maintain strict control over license usage and minimize revenue leakage effectively.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Features of Tally.Developer 9</h2>
+        <section className="py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+          <div className="container-custom relative z-10">
+            <h2 className="text-[32px] font-heading font-bold text-slate-950 tracking-tight mb-16 text-center">Features of Tally.Developer 9</h2>
             
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -338,12 +376,12 @@ export default function TallyDeveloper9Page() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-6 rounded-xl bg-white border border-slate-100 hover:shadow-lg transition-all"
+                    className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-100 hover:shadow-lg hover:border-rose-500/20 transition-all"
                   >
                     <div className="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center flex-shrink-0 mt-1">
                       <CheckCircle2 size={16} className="text-white" />
                     </div>
-                    <p className="text-slate-700 font-medium">{feature}</p>
+                    <p className="text-slate-700 font-medium leading-relaxed">{feature}</p>
                   </motion.div>
                 ))}
               </div>
@@ -351,51 +389,32 @@ export default function TallyDeveloper9Page() {
           </div>
         </section>
 
-        {/* Development Capabilities Section */}
-        <section className="py-24">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Development Capabilities</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {capabilities.map((capability, i) => (
-                <motion.div
-                  key={capability.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all text-center group"
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                    <capability.icon size={32} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{capability.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm">{capability.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Ideal For Section */}
-        <section className="py-24">
-          <div className="container-custom">
+        <section className="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-rose-600/5 blur-[120px] rounded-full -ml-32 -mt-32" />
+          <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
+              className="max-w-4xl mx-auto text-center"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Ideal For Developers & Solution Providers</h2>
+              <h2 className="text-[32px] font-heading font-black text-slate-950 tracking-tight mb-12">Ideal For Developers & Solution Providers</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-10 rounded-[2rem] bg-rose-50 border border-rose-100 hover:shadow-lg transition-all">
-                  <p className="text-lg text-slate-700 font-medium leading-relaxed">
-                    <span className="text-rose-600 font-black">TDL Programmers</span> who want to build custom functionality and extensions for TallyPrime with professional development tools.
+                <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 shadow-sm hover:shadow-lg transition-all text-left relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-rose-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <p className="text-lg text-slate-600 font-medium leading-relaxed m-0">
+                    <span className="text-rose-600 font-bold block mb-2 text-xl">TDL Programmers</span>
+                    Who want to build custom functionality and extensions for TallyPrime with professional development tools.
                   </p>
                 </div>
-                <div className="p-10 rounded-[2rem] bg-slate-100 border border-slate-200 hover:shadow-lg transition-all">
-                  <p className="text-lg text-slate-700 font-medium leading-relaxed">
-                    <span className="text-slate-900 font-black">Solution Partners</span> developing and deploying Tally-based solutions for enterprise clients globally.
+                <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 shadow-sm hover:shadow-lg transition-all text-left relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-slate-950 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <p className="text-lg text-slate-600 font-medium leading-relaxed m-0">
+                    <span className="text-slate-900 font-bold block mb-2 text-xl">Solution Partners</span>
+                    Developing and deploying Tally-based solutions for enterprise clients globally.
                   </p>
                 </div>
               </div>

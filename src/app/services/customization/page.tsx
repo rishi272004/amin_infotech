@@ -54,20 +54,20 @@ export default function CustomizationPage() {
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-rose-600 font-black tracking-widest text-[11px] uppercase mb-6"
+                className="text-rose-600 font-black tracking-widest text-[18px] uppercase mb-6"
               >
                 Tailored Solutions
               </motion.div>
-              <h1 className="text-[50px] md:text-[80px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-[50px] md:text-[60 px] font-bold text-slate-950 tracking-tighter leading-[0.9] mb-8">
                 TallyPrime <span className="text-rose-600">Customization</span> Services
               </h1>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
+              <p className="text-xl text-slate-500 font-normal leading-relaxed mb-10">
                 TallyPrime is architected to be a platform with in-depth customization capabilities. Extend core functionality using TDL, custom DLLs, XSLT, and powerful integration tools to match your exact business requirements.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="bg-slate-950 text-white font-black py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
+                  className="bg-slate-950 text-white font-bold py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
                 >
                   Request Custom Quote
                 </Link>
@@ -85,9 +85,9 @@ export default function CustomizationPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Platform Architecture & Capabilities</h2>
+              <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-12">Platform Architecture & Capabilities</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   TallyPrime is architected as a comprehensive platform intended to support in-depth customization. It comes with an execution Kernel, an interpreter, and a powerful development language called Tally Definition Language (TDL). Using TDL, you'll be able to enhance or modify the default behavior of TallyPrime to perfectly suit your business needs.
                 </p>
@@ -157,56 +157,6 @@ export default function CustomizationPage() {
             </div>
           </div>
         </section>
-
-        {/* Benefits Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Why Customize TallyPrime?</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, i) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                    <benefit.icon size={28} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{benefit.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm">{benefit.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12 text-center">Technical Foundation</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-6">
-                    <CheckCircle2 size={24} className="text-rose-600 flex-shrink-0 mt-1" />
-                    <p className="text-slate-700 font-medium text-base leading-relaxed">{feature}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        
         
       </main>
 

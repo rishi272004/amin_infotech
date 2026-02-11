@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta), sans-serif;
   
   --color-brand-red: #be123c; /* Rose 700 */
   --color-brand-light: #fff5f5;
@@ -53,6 +53,15 @@
 
 .premium-card {
   @apply bg-white rounded-[2rem] p-10 border border-slate-100 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(190,18,60,0.1)] hover:-translate-y-2;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Fix for overlapping header on internal pages */

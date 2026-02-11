@@ -65,10 +65,10 @@ export default function NetServicesPage() {
               >
                 Next-Gen Connectivity
               </motion.div>
-              <h1 className="text-[50px] md:text-[80px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-[50px] md:text-[80px] font-bold text-slate-950 tracking-tighter leading-[0.9] mb-8">
                 Tally <span className="text-rose-600">.NET</span> Services
               </h1>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
+              <p className="text-xl text-slate-500 font-normal leading-relaxed mb-10">
                 Unlock the full power of internet-enabled business capabilities with secure remote access, integrated support systems, and centralized control. Keep your data local while expanding your operational reach globally.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -92,9 +92,9 @@ export default function NetServicesPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Two-Component Architecture for Unparalleled Service</h2>
+              <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-12">Two-Component Architecture for Unparalleled Service</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   On a broad level, TallyPrime comprises of two essential components: the product itself and a powerful set of capabilities enabled via the Internet through a service called Tally.NET Services. This innovative 'two component' architecture was specifically chosen to deliver an unparalleled model of enterprise services.
                 </p>

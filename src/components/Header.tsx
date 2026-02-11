@@ -50,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-10">
             {['Home', 'About'].map((item) => (
               <Link 
                 key={item} 
@@ -61,8 +61,8 @@ const Header = () => {
               </Link>
             ))}
 
-            <Dropdown label="Products" items={products} />
-            <Dropdown label="Services" items={services} />
+            <Dropdown label="Products" href="/products" items={products} />
+            <Dropdown label="Services" href="/services" items={services} />
             
             <Link 
               href="/price-list"
@@ -70,7 +70,7 @@ const Header = () => {
             >
               Pricing
             </Link>
-          </div>
+          </nav>
 
           {/* CTA Group */}
           <div className="flex items-center gap-4">
@@ -78,7 +78,7 @@ const Header = () => {
               href="/contact" 
               className="hidden sm:flex items-center gap-3 px-6 py-3 bg-brand-red text-white rounded-full text-[10px] font-black uppercase tracking-[0.2em] hover:bg-rose-800 transition-all shadow-lg hover:shadow-rose-600/20 group"
             >
-              Consult <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              Contact <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             
             <button 
@@ -109,10 +109,10 @@ const Header = () => {
               </div>
               
               <div className="space-y-6">
-                {['Home', 'About', 'Products', 'Services', 'Pricing', 'Contact'].map((item) => (
+                {['Home', 'About', 'Products', 'Services', 'Price List', 'Contact'].map((item) => (
                   <Link 
                     key={item}
-                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                    href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
                     onClick={() => setMobileMenu(false)}
                     className="block text-4xl font-black text-slate-900 tracking-tighter hover:text-rose-600 transition-colors"
                   >
@@ -128,19 +128,22 @@ const Header = () => {
   );
 };
 
-const Dropdown = ({ label, items }: { label: string, items: any[] }) => {
+const Dropdown = ({ label, href, items }: { label: string, href: string, items: any[] }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div 
-      className="relative cursor-pointer py-2"
+      className="relative py-2"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-700 group">
+      <Link 
+        href={href}
+        className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-700 group hover:text-rose-600 transition-colors"
+      >
         {label}
         <ChevronDown size={12} className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
-      </div>
+      </Link>
       
       <AnimatePresence>
         {open && (

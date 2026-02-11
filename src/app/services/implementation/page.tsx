@@ -52,11 +52,11 @@ export default function ImplementationPage() {
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-rose-600 font-black tracking-widest text-[11px] uppercase mb-6"
+                className="text-rose-600 font-bold tracking-widest text-[18px] uppercase mb-6"
               >
                 Seamless Deployment
               </motion.div>
-              <h1 className="text-[50px] md:text-[65px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-[50px] md:text-[65px] font-bold text-slate-950 tracking-tighter leading-[0.9] mb-8">
                 TallyPrime <span className="text-rose-600">Implementation</span> Services
               </h1>
               <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
@@ -65,7 +65,7 @@ export default function ImplementationPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="bg-slate-950 text-white font-black py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
+                  className="bg-slate-950 text-white font-bold py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
                 >
                   Request Implementation Plan
                 </Link>
@@ -83,9 +83,9 @@ export default function ImplementationPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Expertise & Innovation in ERP Implementation</h2>
+              <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-12">Expertise & Innovation in ERP Implementation</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   Tally's Implementation Services are innovative and designed to optimize processes and produce value to your business from day one. Expertise gleaned from two decades of providing technology solutions to businesses in rising economies gives us the edge to help you quickly attain your objectives.
                 </p>
@@ -94,7 +94,7 @@ export default function ImplementationPage() {
                   The tremendous flexibility & adaptability of TallyPrime simplifies the implementation and makes it straightforward to begin and configure on an incremental basis. Implementation Services take full advantage of this flexibility and adaptability to permit customers to run their businesses while TallyPrime implementation is completed.
                 </p>
 
-                <p className="font-black text-rose-600 italic">
+                <p className="font-bold text-rose-600 italic">
                   Customers can use the ERP and do transactions while the ERP implementation goes on simultaneously. No other ERP in the world can provide this comfort of using the product while implementation is underway!
                 </p>
               </div>
@@ -105,10 +105,10 @@ export default function ImplementationPage() {
         {/* Flexibility Section */}
         <section className="py-24 bg-slate-50 border-b border-slate-100">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Unmatched Flexibility - An Agile Business Grows</h2>
+            <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-16 text-center">Unmatched Flexibility - An Agile Business Grows</h2>
             
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-slate-600 font-medium leading-relaxed mb-12 text-center">
+              <p className="text-lg text-slate-600 font-normal leading-relaxed mb-12 text-center">
                 TallyPrime recognizes that in an ever-changing world, process flexibility is required for businesses to stay agile. We have a technology foundation that enables unconstrained flexibility in your solution.
               </p>
 
@@ -136,10 +136,10 @@ export default function ImplementationPage() {
         {/* Adaptability Section */}
         <section className="py-24 border-b border-slate-100">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Adaptability on the Fly - ERP Adapts to Your Business</h2>
+            <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-16 text-center">Adaptability on the Fly - ERP Adapts to Your Business</h2>
             
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-slate-600 font-medium leading-relaxed mb-12 text-center">
+              <p className="text-lg text-slate-600 font-normal leading-relaxed mb-12 text-center">
                 One of the most amazing benefits TallyPrime offers is the ability to change business structures on real-time data, enabling your business environment to respond and adapt to changes instantly.
               </p>
 
@@ -169,7 +169,7 @@ export default function ImplementationPage() {
         {/* Iterative Implementation Section */}
         <section className="py-24 bg-slate-50 border-b border-slate-100">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Iterative Implementation - A Smooth Sail</h2>
+            <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-16 text-center">Iterative Implementation - A Smooth Sail</h2>
             
             <div className="max-w-4xl mx-auto">
               <p className="text-lg text-slate-600 font-medium leading-relaxed mb-6 text-center">
@@ -195,32 +195,6 @@ export default function ImplementationPage() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Implementation Advantages</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, i) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                    <benefit.icon size={28} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{benefit.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm">{benefit.desc}</p>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>

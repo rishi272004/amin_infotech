@@ -70,16 +70,16 @@ export default function TallySynchronizationPage() {
               >
                 Distributed Operations
               </motion.div>
-              <h1 className="text-[50px] md:text-[70px] font-black text-slate-950 tracking-tighter leading-[1.1] mb-8">
+              <h1 className="text-[50px] md:text-[70px] font-bold text-slate-950 tracking-tighter leading-[1.1] mb-8">
                 Data <span className="text-rose-600">Synchronisation</span> in TallyPrime
               </h1>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
+              <p className="text-xl text-slate-500 font-normal leading-relaxed mb-10">
                 Connect your entire business network with real-time data synchronization. Keep branch offices, distributors, vendors, and retail chains perfectly aligned with unified, current information across all locations.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="bg-slate-950 text-white font-black py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
+                  className="bg-slate-950 text-white font-bold py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
                 >
                   Schedule Synchronization Consultation
                 </Link>
@@ -97,9 +97,9 @@ export default function TallySynchronizationPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Exciting Advances in Data Sync</h2>
+              <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-12">Exciting Advances in Data Sync</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   Data Synchronisation in TallyPrime represents one of the most exciting advances in enterprise data management. It connects you with your business where it happens and when it happens, ensuring complete visibility and coordination across all operational locations.
                 </p>
@@ -108,7 +108,7 @@ export default function TallySynchronizationPage() {
                   Whether you operate a single distribution center, multiple branch offices across geographies, a network of retail chains, or vendor-managed inventory systems, TallyPrime synchronization keeps all your data identical and current. Your teams can work with the same information simultaneously, making faster decisions and coordinating seamlessly.
                 </p>
 
-                <p className="font-black text-rose-600 italic">
+                <p className="font-bold text-rose-600 italic">
                   Two sets of data identical, work with current data - that's the power of TallyPrime Data Synchronisation delivering real-time business intelligence to every location.
                 </p>
               </div>
@@ -138,144 +138,6 @@ export default function TallySynchronizationPage() {
                   <p className="text-slate-600 font-medium text-sm leading-relaxed">{feature.desc}</p>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Scalability Tiers Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Scalability for Your Growth</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {scalabilityTiers.map((tier, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-8 rounded-[2rem] border border-slate-100 hover:border-rose-200 hover:shadow-xl transition-all bg-white"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-600" />
-                    <h3 className="text-lg font-black text-slate-950 uppercase tracking-tight">{tier.title}</h3>
-                  </div>
-                  <p className="text-sm text-slate-500 font-medium mb-6">{tier.description}</p>
-                  <ul className="space-y-3">
-                    {tier.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <CheckCircle2 size={16} className="text-rose-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-600 font-medium text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Configuration Points Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Comprehensive Configuration</h2>
-            
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-4">
-                {configurationPoints.map((point, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="p-6 rounded-[2rem] bg-white border border-slate-100 hover:shadow-lg hover:border-rose-200 transition-all flex items-start gap-4"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-rose-600 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 size={20} className="text-white" />
-                    </div>
-                    <p className="text-slate-700 font-medium text-base leading-relaxed">{point}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Perfect For Your Business Model</h2>
-            
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <h3 className="text-2xl font-black text-rose-600 mb-4 uppercase tracking-tight">Multi-Branch Networks</h3>
-                <p className="text-slate-600 font-medium leading-relaxed mb-6">
-                  Keep all branch offices synchronized with head office data. Enable branch managers to make decisions based on real-time inventory, receivables, and financial information while head office maintains complete control and visibility.
-                </p>
-                <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                  <li>✓ Distributed branch operations</li>
-                  <li>✓ Regional inventory management</li>
-                  <li>✓ Centralized financial reporting</li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <h3 className="text-2xl font-black text-rose-600 mb-4 uppercase tracking-tight">Retail Chain Operations</h3>
-                <p className="text-slate-600 font-medium leading-relaxed mb-6">
-                  Synchronize point-of-sale data across retail locations. Maintain unified inventory across the chain, coordinate purchasing, and generate consolidated performance reports for store comparisons and strategic planning.
-                </p>
-                <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                  <li>✓ Multi-store inventory sync</li>
-                  <li>✓ Unified point-of-sale data</li>
-                  <li>✓ Cross-store analytics</li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <h3 className="text-2xl font-black text-rose-600 mb-4 uppercase tracking-tight">Distributor Networks</h3>
-                <p className="text-slate-600 font-medium leading-relaxed mb-6">
-                  Connect your distributor network for seamless order management and inventory coordination. Ensure smooth product flow from head office through distributors to final retailers with real-time visibility.
-                </p>
-                <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                  <li>✓ Distributor order tracking</li>
-                  <li>✓ Inventory movement visibility</li>
-                  <li>✓ Supply chain optimization</li>
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
-              >
-                <h3 className="text-2xl font-black text-rose-600 mb-4 uppercase tracking-tight">Vendor Management</h3>
-                <p className="text-slate-600 font-medium leading-relaxed mb-6">
-                  Implement vendor-managed inventory with synchronized PO data and receivables tracking. Enable vendors to view current stock levels and automatically coordinate replenishment based on real-time requirements.
-                </p>
-                <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                  <li>✓ Vendor-managed inventory</li>
-                  <li>✓ Automated replenishment</li>
-                  <li>✓ Accounts payable sync</li>
-                </ul>
-              </motion.div>
             </div>
           </div>
         </section>

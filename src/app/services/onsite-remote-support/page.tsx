@@ -61,20 +61,20 @@ export default function OnsiteRemoteSupportPage() {
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-rose-600 font-black tracking-widest text-[11px] uppercase mb-6"
+                className="text-rose-600 font-bold tracking-widest text-[18px] uppercase mb-6"
               >
                 Comprehensive Support Solution
               </motion.div>
-              <h1 className="text-[50px] md:text-[80px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-[50px] md:text-[60px] font-bold text-slate-950 tracking-tighter leading-[0.9] mb-8">
                 Onsite & <span className="text-rose-600">Remote</span> Support
               </h1>
-              <p className="text-xl text-slate-500 font-medium leading-relaxed mb-10">
+              <p className="text-xl text-slate-500 font-normal leading-relaxed mb-15">
                 Expert technical assistance whenever you need it. From on-premise installations to rapid remote troubleshooting, our certified engineers ensure your Tally systems run flawlessly with uninterrupted business continuity.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="bg-slate-950 text-white font-black py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
+                  className="bg-slate-950 text-white font-bold py-4 px-10 rounded-2xl hover:bg-rose-600 hover:shadow-2xl hover:shadow-rose-500/20 transition-all hover:-translate-y-1"
                 >
                   Request Information
                 </Link>
@@ -92,9 +92,9 @@ export default function OnsiteRemoteSupportPage() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Quality Support That Never Stops</h2>
+              <h2 className="text-[40px] font-bold  text-slate-950 tracking-tight mb-12">Quality Support That Never Stops</h2>
               
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
+              <div className="space-y-8 text-lg text-slate-600 font-normal leading-relaxed">
                 <p>
                   Amin Infotech with the assistance of Tally Solutions goes to great lengths to stay the database of our Service Engineers constantly updated to enhance support potency. As a result, you can expect quality support either on-site or remotely using remote communication software products. Our team is always ready to assist you with any Tally-related challenges.
                 </p>
@@ -110,7 +110,7 @@ export default function OnsiteRemoteSupportPage() {
         {/* Core Services Section */}
         <section className="py-24 bg-slate-50 border-b border-slate-100">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Our Support Services</h2>
+            <h2 className="text-[40px] font-bold text-slate-950 tracking-tight mb-16 text-center">Our Support Services</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {services.map((service, i) => (
@@ -125,7 +125,7 @@ export default function OnsiteRemoteSupportPage() {
                   <div className="w-14 h-14 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <service.icon size={32} className="text-white" />
                   </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{service.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-950 mb-3 uppercase tracking-tight">{service.title}</h3>
                   <p className="text-slate-600 font-medium text-sm mb-6">{service.desc}</p>
                   <div className="space-y-2">
                     {service.points.map((point, idx) => (
@@ -141,32 +141,6 @@ export default function OnsiteRemoteSupportPage() {
           </div>
         </section>
 
-
-        {/* Benefits Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Support Benefits</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, i) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all text-center"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-rose-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-                    <benefit.icon size={28} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{benefit.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm">{benefit.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Why Choose Us Section */}
         <section className="py-24">

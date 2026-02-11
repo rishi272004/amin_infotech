@@ -43,8 +43,7 @@ const Footer = () => {
     { number: '+91 9924780015', display: '+91 9924780015' },
     { number: '+91 8200498565', display: '+91 8200498565' },
     { number: '+91 6352943499', display: '+91 6352943499' },
-    { number: '+91 8799388612', display: '+91 8799388612' },
-    { number: '+91 6352943499', display: '+91 6352943499' }
+    { number: '+91 8799388612', display: '+91 8799388612' }
   ];
 
   return (
@@ -55,7 +54,7 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h4 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Quick Links</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.1em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -69,7 +68,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Products</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.1em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Products</h4>
             <ul className="space-y-3">
               {products.map((product) => (
                 <li key={product.label}>
@@ -83,7 +82,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Services</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.1em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.label}>
@@ -97,13 +96,13 @@ const Footer = () => {
 
           {/* Association */}
           <div className="lg:col-span-2">
-            <h4 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">We Are Associated With</h4>
+            <h4 className="text-[11px] font-black uppercase tracking-[0.1em] text-rose-500 mb-8 pb-4 border-b border-rose-500/30">We Are Associated With</h4>
             <div className="flex flex-col gap-8 items-start">
               <div className="flex items-center justify-center">
-                <img src="/images/associate1.png" alt="Associate Partner 1" className="h-20 w-auto object-contain" />
+                <img src="/images/associate1.png" alt="Tally Authorized Partner" className="h-20 w-auto object-contain" />
               </div>
               <div className="flex items-center justify-center">
-                <img src="/images/associate2.png" alt="Associate Partner 2" className="h-20 w-auto object-contain" />
+                <img src="/images/associate2.png" alt="Tally Certified Associate" className="h-20 w-auto object-contain" />
               </div>
             </div>
           </div>
@@ -116,7 +115,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <MapPin size={18} className="text-rose-500 flex-shrink-0" />
-              <h5 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500">Office</h5>
+              <h5 className="text-[11px] font-bold uppercase tracking-[0.1em] text-rose-500">Office</h5>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               4th Floor Signature Building<br/>
@@ -131,11 +130,11 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <Phone size={18} className="text-rose-500 flex-shrink-0" />
-              <h5 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500">Support Numbers</h5>
+              <h5 className="text-[11px] font-bold uppercase tracking-[0.1em] text-rose-500">Support Numbers</h5>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {supportNumbers.map((item) => (
-                <div key={item.number}>
+              {supportNumbers.map((item, idx) => (
+                <div key={`${item.number}-${idx}`}>
                   <a href={`tel:${item.number}`} className="text-slate-400 hover:text-rose-500 transition-colors text-sm font-medium block">
                     {item.display}
                   </a>
@@ -148,7 +147,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <Mail size={18} className="text-rose-500 flex-shrink-0" />
-              <h5 className="text-[11px] font-black uppercase tracking-[0.35em] text-rose-500">Get In Touch</h5>
+              <h5 className="text-[11px] font-bold uppercase tracking-[0.1em] text-rose-500">Get In Touch</h5>
             </div>
             <p className="text-slate-400 text-sm mb-6">
               <a href="mailto:amininfotech@gmail.com" className="hover:text-rose-500 transition-colors font-semibold">
@@ -181,14 +180,14 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-[9px] font-black uppercase tracking-[0.2em]">
-            &copy; {currentYear} Amin Infotech Pvt. Ltd. | ISO 9001:2015 Certified
+          <p className="text-slate-500 text-[9px] font-bold uppercase tracking-[0.2em]">
+            &copy; {currentYear} Amin Infotech | ISO 9001:2015 Certified
           </p>
           <div className="flex gap-8">
-            <Link href="#" className="text-slate-500 hover:text-rose-500 text-[9px] font-black uppercase tracking-[0.2em] transition-colors">
+            <Link href="#" className="text-slate-500 hover:text-rose-500 text-[9px] font-bold uppercase tracking-[0.2em] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-slate-500 hover:text-rose-500 text-[9px] font-black uppercase tracking-[0.2em] transition-colors">
+            <Link href="#" className="text-slate-500 hover:text-rose-500 text-[9px] font-bold uppercase tracking-[0.2em] transition-colors">
               Terms &amp; Conditions
             </Link>
           </div>

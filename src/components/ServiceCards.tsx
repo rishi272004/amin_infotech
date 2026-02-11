@@ -57,7 +57,7 @@ const ServiceCards = () => {
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-4 block"
+            className="text-[16px] font-bold uppercase tracking-[0.1em] text-rose-600 mb-4 block"
           >
             Core Business Areas
           </motion.span>
@@ -87,13 +87,13 @@ const ServiceCards = () => {
                 <div className="p-4 rounded-xl bg-white text-rose-600 shadow-sm border border-slate-100 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 group-hover:scale-110 w-fit mb-4">
                   <service.icon size={22} aria-label={`${service.title} service icon`} />
                 </div>
-                <h3 className="text-base font-black text-slate-950 mb-2 tracking-tight">{service.title}</h3>
-                <p className="text-slate-600 text-xs font-medium leading-relaxed mb-4 flex-grow">
+                <h3 className="text-lg font-bold text-slate-950 mb-3 tracking-normal">{service.title}</h3>
+                <p className="text-slate-600 text-sm font-medium leading-relaxed mb-4 flex-grow">
                   {isExpanded ? service.desc : truncatedDesc}
                 </p>
                 <button
                   onClick={() => toggleExpanded(service.slug)}
-                  className="text-rose-600 font-black text-xs uppercase tracking-wider hover:text-rose-700 transition-colors self-start"
+                  className="text-rose-600 font-bold text-xs uppercase tracking-wider hover:text-rose-700 transition-colors self-start"
                 >
                   {isExpanded ? 'Less' : 'More'}
                 </button>

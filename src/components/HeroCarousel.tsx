@@ -21,7 +21,7 @@ const HeroCarousel = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-[60px] md:text-[80px] font-black text-slate-950 leading-[0.85] tracking-[-0.04em] mb-10"
+              className="text-[60px] md:text-[70px] font-black text-slate-950 leading-[0.95] tracking-[-0.04em] mb-10"
             >
               WELCOME TO <br />
               <span className="text-rose-600">AMIN INFOTECH</span>
@@ -31,7 +31,7 @@ const HeroCarousel = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mb-12"
+              className="text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mb-12"
             >
               Tally Authorized Certified Partner, Service Centre, Development Partner & Tally Integrator Partner. 
               Since 1999, we deliver scalable, reliable and highly efficient Tally solutions to clientele across the World.
@@ -44,9 +44,9 @@ const HeroCarousel = () => {
               className="flex flex-wrap gap-6"
             >
               <Link href="/contact" className="px-10 py-5 bg-rose-600 text-white text-[12px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-rose-800 transition-all shadow-2xl shadow-rose-600/20 flex items-center gap-4 group">
-                Request Expert Advisory <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                Connect with US <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
               </Link>
-              <Link href="/price-list" className="px-10 py-5 bg-white border border-slate-200 text-slate-900 text-[12px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-slate-50 transition-all">
+              <Link href="/price-list" className="px-10 py-5 bg-slate-600 border border-slate-600 text-white text-[12px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-slate-700 transition-all">
                 View Price List
               </Link>
             </motion.div>

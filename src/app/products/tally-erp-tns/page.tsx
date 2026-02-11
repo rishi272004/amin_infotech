@@ -218,8 +218,10 @@ export default function TallyPrimeProductPage() {
       
       <main className="page-header-offset">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-slate-50 to-white py-24 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-600/5 blur-[120px] rounded-full -mr-32 -mt-32" />
+        <section className="bg-slate-50 py-24 relative overflow-hidden">
+          <div className="absolute top-[-10%] left-[-5%] text-[40vw] font-black text-rose-50/40 select-none pointer-events-none tracking-tighter leading-none">
+            AI
+          </div>
           
           <div className="container-custom relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -228,11 +230,11 @@ export default function TallyPrimeProductPage() {
                 animate={{ opacity: 1, x: 0 }}
                 className="max-w-2xl"
               >
-                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-6 block">Complete Business Management</span>
-                <h1 className="text-[50px] md:text-[80px] font-black text-slate-950 tracking-tighter leading-[0.9] mb-10">
+                <span className="text-[18px] font-bold uppercase tracking-[0.1em] text-rose-600 mb-6 block">Complete Business Management</span>
+                <h1 className="text-[50px] md:text-[70px] font-heading font-bold text-slate-950 tracking-tighter leading-[1.0] mb-8">
                   <span className="text-rose-600">Tally</span><span className="text-slate-950">Prime</span>
                 </h1>
-                <p className="text-xl text-slate-600 font-medium leading-relaxed mb-8">
+                <p className="text-xl text-slate-600 font-normal leading-relaxed mb-8">
                   The Complete Business Management Solution. TallyPrime has all the features required for high-performance business management with stability you can trust.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -290,72 +292,86 @@ export default function TallyPrimeProductPage() {
           </div>
         </section>
 
-        {/* Overview Section */}
-        <section className="py-24 border-b border-slate-100">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-12">Why Choose TallyPrime?</h2>
-              
-              <div className="space-y-8 text-lg text-slate-600 font-medium leading-relaxed">
-                <p>
-                  At Tally, we have a hard-earned reputation for empowering businesses with stable, effective software products. TallyPrime has all the features required for high-performance business management.
-                </p>
-
-                <p>
-                  You bank and pay utility bills from home, why not do your business transactions? Or call up a stock status report and print a copy from wherever you are? TallyPrime has been designed with you in mind. Powerful connectivity makes information available with your staff, CA and other professionals, round-the-clock, in any place.
-                </p>
-
-                <p>
-                  It's quick to install and allows incremental implementation - a novel capability that lets you activate just as many of its functions when required, even across locations. With Trusted Remote Access, Audit & Compliance Services, an Integrated Support Centre and Security management, all focused on delivering peace of mind to You.
-                </p>
-
-                <p>
-                  TallyPrime is a complete product that retains its original simplicity yet offers comprehensive business functionalities such as Accounting, Finance, Inventory, Sales, Purchase, Point of Sales, Manufacturing, Costing, Job Costing, Payroll and Branch Management along with capabilities like Statutory Processes, excise and more. Whatever the demands, TallyPrime makes life a lot easier.
-                </p>
-
-                <p>
-                  With an ideal combination of function, control and customisability built in, TallyPrime permits business owners and their associates to do more.
-                </p>
-              </div>
-            </motion.div>
+        {/* Why Choose Section - Modern Layout */}
+        <section className="py-32 bg-white relative">
+          {/* Decorative Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-white -skew-x-12 transform origin-top translate-x-20 -z-0" />
+            <div className="absolute top-1/4 left-0 w-64 h-64 bg-rose-50 rounded-full blur-[100px] -z-0 opacity-50" />
           </div>
-        </section>
-
-        {/* Key Features Section */}
-        <section className="py-24 bg-slate-50 border-b border-slate-100">
-          <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Comprehensive Features</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, i) => (
+          
+          <div className="container-custom relative z-10">
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
+              {/* Left Side: Sticky Header */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32 pb-10">
                 <motion.div
-                  key={feature.title}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-rose-600 font-bold tracking-[0.1em] text-sm uppercase mb-6 block">The Advantage</span>
+                  <h2 className="text-[48px] md:text-[56px] font-heading font-bold text-slate-950 tracking-tighter leading-[1.1] mb-8">
+                    Why Choose <br />
+                    <span className="text-rose-600">TallyPrime?</span>
+                  </h2>
+                  <div className="w-20 h-1.5 bg-rose-600 mb-8" />
+                  <p className="text-lg text-slate-500 font-normal leading-relaxed max-w-sm">
+                    Empowering businesses with stable, effective, and flexible software solutions designed for the modern era.
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Right Side: Paragraph Contents */}
+              <div className="lg:col-span-7 space-y-12">
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:shadow-2xl hover:border-rose-200 transition-all group"
+                  className="prose prose-slate max-w-none"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-rose-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <CheckCircle2 size={24} className="text-white" />
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-100 border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
+                    <div className="absolute top-0 left-0 w-2 h-full bg-rose-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      At Tally, we have a hard-earned reputation for empowering businesses with stable, effective software products. TallyPrime has all the features required for high-performance business management, allowing you to bank and pay utility bills from home just as easily as you handle your business transactions.
+                    </p>
                   </div>
-                  <h3 className="text-lg font-black text-slate-950 mb-3 uppercase tracking-tight">{feature.title}</h3>
-                  <p className="text-slate-600 font-medium text-sm leading-relaxed">{feature.desc}</p>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-100 border border-slate-100 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      TallyPrime has been designed with you in mind. Powerful connectivity makes information available with your staff, CA and other professionals, round-the-clock, in any place. Whether you need to call up a stock status report or print a copy from wherever you are, the system ensures seamless accessibility.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-100 border border-slate-100 shadow-xl shadow-slate-200/50 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      It is remarkably quick to install and allows for incremental implementation. This novel capability lets you activate just as many of its functions as required, even across multiple locations. With Trusted Remote Access, Audit & Compliance Services, an Integrated Support Centre and Security management, the entire ecosystem is focused on delivering absolute peace of mind to you.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-slate-100 border border-slate-100 mt-8 relative overflow-hidden group">
+                    <p className="text-xl text-slate-700 font-normal leading-relaxed m-0">
+                      As a complete product, TallyPrime retains its original simplicity yet offers comprehensive business functionalities such as Accounting, Finance, Inventory, Sales, Purchase, Point of Sales, Manufacturing, Costing, Job Costing, Payroll and Branch Management. It further extends its capabilities to Statutory Processes, excise and more, ensuring that whatever the demands, TallyPrime makes your life a lot easier.
+                    </p>
+                  </div>
+
+                  <div className="p-8 md:p-10 rounded-[2.5rem] bg-rose-600 text-white shadow-xl shadow-rose-200 mt-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl" />
+                    <p className="text-xl font-normal leading-relaxed m-0">
+                      With an ideal combination of function, control and customisability built in, TallyPrime permits business owners and their associates to do more and achieve higher operational efficiency than ever before.
+                    </p>
+                  </div>
                 </motion.div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
+        
+
         {/* Advantages Section */}
-        <section className="py-24">
+        <section className="py-24 bg-slate-50">
           <div className="container-custom">
-            <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-16 text-center">Key Advantages</h2>
+            <h2 className="text-[40px] font-heading font-bold text-slate-950 tracking-tight mb-16 text-center">Key Advantages</h2>
             
             <div className="max-w-3xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -366,7 +382,7 @@ export default function TallyPrimeProductPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-6 rounded-xl bg-rose-50 border border-rose-100 hover:shadow-lg transition-all"
+                    className="flex items-start gap-4 p-6 rounded-xl bg-rose-50 border border-slate-100 hover:shadow-lg transition-all"
                   >
                     <div className="w-6 h-6 rounded-full bg-rose-600 flex items-center justify-center flex-shrink-0 mt-1">
                       <CheckCircle2 size={16} className="text-white" />
@@ -380,7 +396,7 @@ export default function TallyPrimeProductPage() {
         </section>
 
         {/* System Requirements */}
-        <section className="py-24 bg-slate-50 border-y border-slate-100">
+        <section className="py-24 bg-white border-y border-slate-100">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -388,10 +404,10 @@ export default function TallyPrimeProductPage() {
               viewport={{ once: true }}
               className="max-w-2xl mx-auto"
             >
-              <h2 className="text-[40px] font-black text-slate-950 tracking-tight mb-8 text-center">System Requirements</h2>
-              <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-lg">
-                <p className="text-lg text-slate-700 font-medium leading-relaxed">
-                  The product is supported on <span className="text-rose-600 font-black">Windows operating system</span>; on Windows XP and above. Whether you're a small business or an enterprise, TallyPrime adapts to your infrastructure seamlessly.
+              <h2 className="text-[40px] font-heading font-bold text-slate-950 tracking-tight mb-8 text-center">System Requirements</h2>
+              <div className="bg-slate-50 p-12 rounded-[2.5rem] border border-slate-100 shadow-lg shadow-rose-600/5">
+                <p className="text-lg text-slate-700 font-normal leading-relaxed">
+                  The product is supported on <span className="text-rose-600 font-bold">Windows operating system</span>; on Windows XP and above. Whether you're a small business or an enterprise, TallyPrime adapts to your infrastructure seamlessly.
                 </p>
               </div>
             </motion.div>

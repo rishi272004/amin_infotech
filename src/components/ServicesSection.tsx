@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { HelpCircle, Wrench, Database, Target, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -45,154 +45,119 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (dir: number) => ({
-      zIndex: 0,
-      x: dir < 0 ? 1000 : -1000,
-      opacity: 0
-    })
+  const checkScroll = () => {
+    if (containerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
+    }
   };
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-      let nextIndex = prevIndex + newDirection;
-      if (nextIndex < 0) nextIndex = services.length - 1;
-      if (nextIndex >= services.length) nextIndex = 0;
-      return nextIndex;
-    });
-  };
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
 
-  const activeService = services[currentIndex];
+  const scroll = (direction: 'left' | 'right') => {
+    if (containerRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
+    <section className="section-padding bg-slate-50 relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-rose-50 rounded-full blur-[120px] -z-10" />
       
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600 mb-4 block"
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
           >
-            Professional Services
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-950 tracking-tighter leading-tight">
-            Our <span className="text-rose-600">Services</span>
-          </h2>
-        </motion.div>
+            <span className="text-[14px] font-bold uppercase tracking-[0.1em] text-rose-600 mb-4 block">
+              Professional Services
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-950 tracking-tighter leading-tight">
+              Enterprise Grade <span className="text-rose-600">Solutions</span>
+            </h2>
+          </motion.div>
 
-        {/* Slider Container */}
-        <div className="relative h-full">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={currentIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
-              className="bg-gradient-to-br from-slate-50 to-white rounded-[3rem] p-10 md:p-16 border border-slate-100 shadow-lg max-w-4xl mx-auto"
+          <div className="flex gap-4">
+            <button
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 ${
+                canScrollLeft 
+                  ? 'border-rose-200 text-rose-600 hover:bg-rose-600 hover:text-white hover:border-rose-600 shadow-md' 
+                  : 'border-slate-200 text-slate-300 cursor-not-allowed'
+              }`}
+              aria-label="Previous service"
             >
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-                <div className="flex-shrink-0">
-                  <div className="w-24 h-24 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-600">
-                    <activeService.icon size={48} />
-                  </div>
-                </div>
-                
-                <div className="flex-grow">
-                  <h3 className="text-3xl md:text-4xl font-black text-slate-950 mb-6 tracking-tight">
-                    {activeService.title}
-                  </h3>
-                  
-                  <p className="text-lg text-slate-600 font-medium leading-relaxed mb-10">
-                    {activeService.desc}
-                  </p>
-                  
-                  <Link
-                    href={activeService.href}
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-rose-600 text-white font-black text-[11px] uppercase tracking-widest rounded-full hover:bg-rose-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    Learn More <span>→</span>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-20 md:-translate-x-24 z-10 w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center hover:bg-rose-700 hover:scale-110 transition-all duration-300 shadow-lg"
-            aria-label="Previous service"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-20 md:translate-x-24 z-10 w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center hover:bg-rose-700 hover:scale-110 transition-all duration-300 shadow-lg"
-            aria-label="Next service"
-          >
-            <ChevronRight size={24} />
-          </button>
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 ${
+                canScrollRight 
+                  ? 'border-rose-200 text-rose-600 hover:bg-rose-600 hover:text-white hover:border-rose-600 shadow-md' 
+                  : 'border-slate-200 text-slate-300 cursor-not-allowed'
+              }`}
+              aria-label="Next service"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
 
-        {/* Indicator Dots */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="flex justify-center gap-3 mt-16"
+        {/* Scrollable Container */}
+        <div 
+          ref={containerRef}
+          onScroll={checkScroll}
+          className="flex gap-8 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory px-4 md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {services.map((_, i) => (
-            <button
+          {services.map((service, i) => (
+            <motion.div
               key={i}
-              onClick={() => {
-                setDirection(i > currentIndex ? 1 : -1);
-                setCurrentIndex(i);
-              }}
-              className={`transition-all duration-300 ${
-                currentIndex === i
-                  ? 'bg-rose-600 w-10 h-3 rounded-full'
-                  : 'bg-slate-300 w-3 h-3 rounded-full hover:bg-slate-400'
-              }`}
-              aria-label={`Go to service ${i + 1}`}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="flex-shrink-0 w-[300px] md:w-[400px] snap-start"
+            >
+              <div className="h-full bg-white rounded-[2rem] p-8 border border-slate-100 hover:border-rose-100 transition-all duration-500 group hover:shadow-2xl hover:shadow-rose-600/5 flex flex-col items-start text-left">
+                <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 mb-8 group-hover:scale-110 group-hover:rotate-3">
+                  <service.icon size={32} />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-slate-950 mb-4 tracking-tight leading-snug">
+                  {service.title}
+                </h3>
+                
+                <p className="text-slate-600 font-medium leading-relaxed mb-8 flex-grow">
+                  {service.desc}
+                </p>
+                
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center gap-2 text-rose-600 font-bold text-xs uppercase tracking-widest group/link"
+                >
+                  Learn More 
+                  <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                </Link>
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
-
-        {/* Counter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-center mt-8 text-slate-600 font-black text-sm"
-        >
-          {currentIndex + 1} of {services.length}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

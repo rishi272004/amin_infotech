@@ -60,17 +60,17 @@ const ProductsCarousel = () => {
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-[11px] font-black uppercase tracking-[0.3em] text-rose-600"
+              className="text-[18px] font-bold uppercase tracking-[0.1em] text-rose-600"
             >
               Our Portfolio
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl font-black text-slate-900 mt-6 tracking-tighter"
+              className="text-5xl md:text-6xl font-bold text-slate-900 mt-6 tracking-tighter"
             >
               Enterprise Grade <br />
-              <span className="text-slate-400">Software Assets.</span>
+              <span className="text-rose-600">Software Assets</span>
             </motion.h2>
           </div>
           
@@ -94,10 +94,10 @@ const ProductsCarousel = () => {
               </div>
 
               <div className="relative z-10 flex flex-col h-full">
-                <span className="text-[10px] font-black uppercase text-rose-600 tracking-[0.2em] mb-3 block">
+                <span className="text-sm font-bold uppercase text-rose-600 tracking-[0.1em] mb-3 block">
                   {product.category}
                 </span>
-                <h3 className="text-2xl font-black text-slate-900 mb-5 tracking-tight">
+                <h3 className="text-2xl font-bold text-slate-900 mb-5 tracking-tight">
                   {product.name}
                 </h3>
                 <p className="text-slate-600 font-medium leading-relaxed mb-8 flex-grow">
