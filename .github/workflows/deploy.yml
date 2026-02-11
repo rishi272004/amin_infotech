@@ -24,13 +24,16 @@ jobs:
       - name: Build Project
         env:
           CI: false
-        run: npx next build
-
-      - name: Debug - List Files
         run: |
-          ls -la
-          find . -maxdepth 2 -not -path '*/.*'
-          [ -d "out" ] && echo "out directory exists" || echo "out directory DOES NOT exist"
+          npm run build
+          echo "Checking for out directory..."
+          if [ -d "out" ]; then
+            echo "SUCCESS: 'out' directory exists."
+          else
+            echo "ERROR: 'out' directory NOT found."
+            ls -la
+            exit 1
+          fi
 
       - name: Deploy to Distribution Repo
         uses: JamesIves/github-pages-deploy-action@v4
