@@ -24,11 +24,12 @@ jobs:
       - name: Build Project
         env:
           CI: false
-        run: npm run build
+        run: npx next build
 
       - name: Debug - List Files
         run: |
           ls -la
+          find . -maxdepth 2 -not -path '*/.*'
           [ -d "out" ] && echo "out directory exists" || echo "out directory DOES NOT exist"
 
       - name: Deploy to Distribution Repo
