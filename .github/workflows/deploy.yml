@@ -24,16 +24,7 @@ jobs:
       - name: Build Project
         env:
           CI: false
-        run: |
-          npm run build
-          echo "Checking for out directory..."
-          if [ -d "out" ]; then
-            echo "SUCCESS: 'out' directory exists."
-          else
-            echo "ERROR: 'out' directory NOT found."
-            ls -la
-            exit 1
-          fi
+        run: npm run build
 
       - name: Deploy to Distribution Repo
         uses: JamesIves/github-pages-deploy-action@v4
